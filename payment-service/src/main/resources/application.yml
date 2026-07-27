@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: payment-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: production
+    sentinel:
+      transport:
+        dashboard: localhost:8858
+        port: 8719
+
+server:
+  port: 8085
