@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: live-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: production
+        username: nacos
+        password: nacos
+    sentinel:
+      transport:
+        dashboard: localhost:8858
+        port: 8719
+  datasource:
+    url: jdbc:mysql://localhost:3306/live_platform?useSSL=false&serverTimezone=UTC&characterEncoding=utf8mb4&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  redis:
+    host: localhost
+    port: 6379
+    database: 1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8082
+  servlet:
+    context-path: /
